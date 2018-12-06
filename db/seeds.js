@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const { dbURI } = require('../config/environment');
 const Project = require('../models/project');
 const User = require('../models/user');
-const Support= require('../models/support');
 
 mongoose.Promise = require('bluebird');
 
@@ -12,18 +11,26 @@ const userIds = [
   '5be9860fcb16d525543ceda3'
 ];
 
-const supportData = [
-  {
-    from: userIds[2],
-    to: userIds[0],
-    amount: 2
-  },
-  {
-    from: userIds[2],
-    to: userIds[1],
-    amount: 4
-  }
+const supportIds = [
+  '5be9bd11c7f4b190431791a6',
+  '5be9bd11c7f4b190431791a7',
+  '5be9bd11c7f4b190431791a8'
 ];
+
+// const supportData = [
+//   {
+//     _id: supportIds[0],
+//     from: userIds[2],
+//     to: userIds[0],
+//     amount: 3
+//   },
+//   {
+//     _id: supportIds[1],
+//     from: userIds[2],
+//     to: userIds[1],
+//     amount: 11
+//   }
+// ];
 
 const userData = [
   {
@@ -58,13 +65,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'I always wanted to be a doctor',
       from: 'Dancer',
       to: 'Doctor',
-      goal: 5,
+      goal: 10,
       comments: [
         {
-          user: userIds[1],
+          commentBy: userIds[1],
           text: 'Good luck 👍'
         }, {
-          user: userIds[2],
+          commentBy: userIds[2],
           text: 'Wow sounds great, you can do this.'
         }
       ]
@@ -74,13 +81,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'test2',
       from: 'Plumber',
       to: 'Performer',
-      goal: 10,
+      goal: 20,
       comments: [
         {
-          user: userIds[0],
+          commentBy: userIds[0],
           text: 'Are you sure??🙀'
         }, {
-          user: userIds[2],
+          commentBy: userIds[2],
           text: 'As long as you like it...'
         }
       ]
@@ -92,12 +99,8 @@ mongoose.connect(dbURI, (err, db) => {
     })
     .then(users => {
       console.log(`${users.length} users created`);
-      // return Support.create(supportData);
       mongoose.connection.close();
     })
-    // .then(supports => {
-    //   console.log(`${supports.length} supports created`);
-    // })
     .catch(err => console.log(err));
     // .finally(() => mongoose.connection.close());
 });

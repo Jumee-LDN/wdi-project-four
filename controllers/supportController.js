@@ -1,29 +1,24 @@
-const Support = require('../models/support');
+const Project = require('../models/project');
 
-function indexRoute(req, res, next) {
-  Support.find({ $or: [{ from: req.tokenUserId }, { to: req.tokenUserId }] })
-    .populate('from to', 'username')
-    .sort('createdAt')
-    .then(supports => res.json(supports))
-    .catch(next);
-}
 
-function createRoute(req, res, next) {
+function createRoute(req, res, next){
   req.body.from = req.tokenUserId;
-  Support.create(req.body)
-    .then(support => Support.populate(support, 'from to'))
-    .then(support => res.json(support))
+  console.log(`req.body.from is: ${req.body.from}`);
+
+  Project
+    .findById(req.params.id)
+    .populate('username image')
+    .then(project => {
+      Project.populate(project, 'supports.from supports.to');
+      project.supports.push(req.body);
+      console.log(`req.body is: ${req.body}, project is: ${project}`);
+      return project.save();
+    })
+    .then(project => res.json(project))
     .catch(next);
 }
 
-function deleteRoute(req, res, next) {
-  Support.findOneAndDelete(req.params.id)
-    .then(() => res.sendStatus(204))
-    .catch(next);
-}
 
 module.exports = {
-  index: indexRoute,
-  create: createRoute,
-  delete: deleteRoute
+  create: createRoute
 };

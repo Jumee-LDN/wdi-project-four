@@ -11,10 +11,18 @@ const projectSchema = new mongoose.Schema({
   comments: [
     {
       text: String,
-      user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+      commentBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
     }
   ],
-  supports: [ { type: mongoose.Schema.ObjectId, ref: 'Support' } ]
+  supports: [
+    // { type: mongoose.Schema.ObjectId, ref: 'Support' }
+    {
+      from: { type: mongoose.Schema.ObjectId, ref: 'User' },
+      to: { type: mongoose.Schema.ObjectId, ref: 'User' },
+      inResponseTo: { type: mongoose.Schema.ObjectId, ref: 'Project' },
+      amount: { type: Number, required: true }
+    }
+  ]
 });
 
 projectSchema.virtual('totalSupport')
@@ -22,6 +30,11 @@ projectSchema.virtual('totalSupport')
     return this.supports.reduce((sum, support) => {
       return sum + support.amount;
     }, 0);
+  });
+
+projectSchema.virtual('remainder')
+  .get(function() {
+    return this.goal - this.totalSupport;
   });
 
 projectSchema.set('toJSON', { virtuals: true });
