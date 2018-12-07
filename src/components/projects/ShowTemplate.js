@@ -1,9 +1,10 @@
 import React from 'react';
-import CommentBox from './CommentBox';
 
-function ShowTemplate( { project} ){
+import FormTextarea from './formElements/FormTextarea';
+import FormButton from './formElements/FormButton';
 
-  console.log(project);
+function ShowTemplate( { project, handleChange, createComment, deleteComment} ){
+
   return(
     <div className="columns is-multiline">
       <div>
@@ -20,16 +21,28 @@ function ShowTemplate( { project} ){
             <p>{project.remainder}</p>
           </div>
           <div>
-
+            <p>{project.description}</p>
           </div>
         </div>
+        <hr />
         <div>
           <p>Comments</p>
           <div>
             {project.comments && project.comments.map(
-              comment => <p key={comment._id}> {comment.commentBy} {comment.text} </p>
+              comment => <div key={comment._id}>
+                <div> {comment.commentBy.username} {comment.text} </div>
+                <div className="media-right">
+                  <button className="delete" onClick={() => deleteComment(comment._id)}></button>
+                </div>
+              </div>
+
             )}
           </div>
+          <hr />
+          <form onSubmit={createComment}>
+            <FormTextarea name="text" handleChange={handleChange}/>
+            <FormButton text="Submit Comment"/>
+          </form>
         </div>
       </div>
 

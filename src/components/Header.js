@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { isAuthenticated, deleteToken, decodeToken } from '../lib/auth';
+import { isAuthenticated, deleteToken } from '../lib/auth';
 
 
 class Header extends React.Component {

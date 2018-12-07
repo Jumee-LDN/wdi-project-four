@@ -8,6 +8,7 @@ const projectSchema = new mongoose.Schema({
   from: { type: String, required: true },
   to: { type: String, required: true },
   goal: { type: Number, required: true },
+  description: { type: String },
   comments: [
     {
       text: String,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { isAuthenticated, decodeToken } from '../lib/auth';
 
 function Home() {
@@ -6,7 +7,7 @@ function Home() {
     <div>
       {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
       <h1>What do you want to be?</h1>
-      <button>Click to Change</button>
+      <button><Link to="/Projects/new">Click to Change</Link></button>
     </div>
   );
 }
