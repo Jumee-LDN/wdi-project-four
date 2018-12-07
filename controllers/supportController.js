@@ -7,9 +7,7 @@ function createRoute(req, res, next){
 
   Project
     .findById(req.params.id)
-    .populate('username image')
     .then(project => {
-      Project.populate(project, 'supports.from supports.to');
       project.supports.push(req.body);
       console.log(`req.body is: ${req.body}, project is: ${project}`);
       return project.save();

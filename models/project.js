@@ -18,10 +18,8 @@ const projectSchema = new mongoose.Schema({
     // { type: mongoose.Schema.ObjectId, ref: 'Support' }
     {
       from: { type: mongoose.Schema.ObjectId, ref: 'User' },
-      to: { type: mongoose.Schema.ObjectId, ref: 'User' },
-      inResponseTo: { type: mongoose.Schema.ObjectId, ref: 'Project' },
       amount: { type: Number, required: true }
-    }
+    }, { timestamps: true }
   ]
 });
 

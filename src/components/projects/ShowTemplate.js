@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentBox from './CommentBox';
 
 function ShowTemplate( { project} ){
 
@@ -14,8 +15,13 @@ function ShowTemplate( { project} ){
         </div>
         <hr />
         <div>
-          <h3>Remainder</h3>
-          <p>{project.remainder}</p>
+          <div>
+            <h3>Remainder</h3>
+            <p>{project.remainder}</p>
+          </div>
+          <div>
+
+          </div>
         </div>
         <div>
           <p>Comments</p>

@@ -16,7 +16,7 @@ router.route('/projects/:id')
   .put(projects.update)
   .delete(projects.delete);
 
-router.post('/projects/:id/supports', supports.create);
+router.post('/projects/:id/supports', secureRoute, supports.create);
 
 router.post('/projects/:projectId/comments', secureRoute, comments.create);
 router.delete('/projects/:projectId/comments/:commentId', secureRoute, comments.delete);

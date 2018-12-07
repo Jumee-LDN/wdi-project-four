@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { isAuthenticated, deleteToken, decodeToken } from '../lib/auth';
 
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    deleteToken();
+    this.props.history.push('/');
   }
 
   render() {
@@ -17,7 +24,7 @@ class Header extends React.Component {
           <Link to="/Projects">All Projects</Link>
           <Link to="/Register">Register</Link>
           <Link to="/Login">Login</Link>
-          <Link to="/">Logout</Link>
+          {isAuthenticated() && <a onClick={this.handleLogout} >Log Out</a>}
         </div>
       </nav>
     );
