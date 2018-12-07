@@ -1,14 +1,10 @@
 const User = require('../models/user');
 
-function indexRoute(req, res, next) {
-  User.find()
-    .then(users => res.json(users))
-    .catch(next);
-}
 
 function showRoute(req, res, next){
   User.findById(req.params.id)
-    .populate('projectCreated')
+    .populate('commentedByMe')
+    .populate('supportedByMe')
     // Remove the password before sending to the client!!
     .select('-password')
     .then(user => {
@@ -18,6 +14,5 @@ function showRoute(req, res, next){
 }
 
 module.exports = {
-  index: indexRoute,
   show: showRoute
 };

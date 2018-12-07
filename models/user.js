@@ -26,7 +26,8 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
-//Before (pre) any function 'saves' something, run this function to encrypt the password before it is stored:
+/* Before (pre) any function 'saves' something, run this function to encrypt
+the password before it is stored: */
 userSchema.pre('validate', function checkPassword(next){
   if(this.isModified('password') && this._passwordConfirmation !== this.password){
     this.invalidate('passwordConfirmation', 'does not match');
@@ -39,6 +40,29 @@ userSchema.pre('save', function hashPassword(next){
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8));
   }
   next();
+});
+
+// Get all a users project:
+userSchema.virtual('projectsCreated', {
+  ref: 'Project',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
+userSchema.virtual('commentedByMe', {
+  ref: 'Project',
+  localField: '_id',
+  foreignField: 'comments.commentBy'
+});
+
+userSchema.virtual('supportedByMe', {
+  ref: 'Project',
+  localField: '_id',
+  foreignField: 'supports.from'
+});
+
+userSchema.set('toJSON', {
+  virtuals: true
 });
 
 module.exports = mongoose.model('User', userSchema);
