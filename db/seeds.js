@@ -78,7 +78,7 @@ mongoose.connect(dbURI, (err, db) => {
     },
     {
       createdBy: userIds[1],
-      title: 'test2',
+      title: 'Born to be a Peformer',
       from: 'Plumber',
       to: 'Performer',
       goal: 20,

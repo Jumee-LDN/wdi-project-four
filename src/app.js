@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Header from './components/Header';
+import Home from './components/Home';
+import AuthLogin from './components/auth/Login';
+import AuthRegister from './components/auth/Register';
+import ProjectIndex from './components/projects/Index';
+
 
 import 'bulma';
 import './scss/style.scss';
@@ -8,12 +16,26 @@ import './scss/style.scss';
 class App extends React.Component {
   render() {
     return (
-      <h1>Hello World!</h1>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <main className="container">
+            <Switch>
+              <Route exact path='/' component={Home}/>
+              <Route exact path='/projects' component={ProjectIndex}/>
+              <Route path="/login" component={AuthLogin} />
+              <Route path="/register" component={AuthRegister} />
+            </Switch>
+          </main>
+        </div>
+      </BrowserRouter>
     );
   }
 }
 
 ReactDOM.render(
-  <App />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
