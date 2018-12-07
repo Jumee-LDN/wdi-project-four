@@ -7,6 +7,7 @@ import Home from './components/Home';
 import AuthLogin from './components/auth/Login';
 import AuthRegister from './components/auth/Register';
 import ProjectIndex from './components/projects/Index';
+import ProjectShow from './components/projects/Show';
 
 
 import 'bulma';
@@ -23,6 +24,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route exact path='/projects' component={ProjectIndex}/>
+              <Route exact path='/projects/:id' component={ProjectShow}/>
               <Route path="/login" component={AuthLogin} />
               <Route path="/register" component={AuthRegister} />
             </Switch>
