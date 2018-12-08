@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import AuthLogin from './components/auth/Login';
 import AuthRegister from './components/auth/Register';
-import Profile from './components/auth/Profile';
+import Profile from './components/user/Profile';
 import ProjectIndex from './components/projects/Index';
 import ProjectShow from './components/projects/Show';
 import ProjectNew from './components/projects/New';

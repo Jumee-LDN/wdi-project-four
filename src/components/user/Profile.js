@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import ProfileTemplate from './ProfileTemplate';
+import { onlyUnique } from '../../lib/common';
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.onlyUnique = onlyUnique.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +22,15 @@ class Profile extends React.Component {
     console.log('user is: ', user);
     return (
       <section>
-        <h1 className="title">Username goes here</h1>
+        { user
+          ?
+          <ProfileTemplate
+            user={user}
+            onlyUnique={this.onlyUnique}
+          />
+          :
+          <p>Please log in</p>
+        }
       </section>
     );
   }

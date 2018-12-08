@@ -65,7 +65,8 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'I always wanted to be a doctor',
       from: 'Dancer',
       to: 'Doctor',
-      goal: 10,
+      goal: 50,
+      story: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
       comments: [
         {
           commentBy: userIds[1],
@@ -81,7 +82,8 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Born to be a Peformer',
       from: 'Plumber',
       to: 'Performer',
-      goal: 20,
+      goal: 60,
+      story: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       comments: [
         {
           commentBy: userIds[0],
@@ -91,7 +93,25 @@ mongoose.connect(dbURI, (err, db) => {
           text: 'As long as you like it...'
         }
       ]
+    },
+    {
+      createdBy: userIds[1],
+      title: 'Peformer to Ballerina',
+      from: 'Performer',
+      to: 'Ballerina',
+      goal: 30,
+      story: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      comments: [
+        {
+          commentBy: userIds[2],
+          text: 'Changing again??'
+        }, {
+          commentBy: userIds[0],
+          text: 'Whats the difference? Just not sure.'
+        }
+      ]
     }
+
   ])
     .then(projects => {
       console.log(`${projects.length} projects created`);
@@ -102,5 +122,4 @@ mongoose.connect(dbURI, (err, db) => {
       mongoose.connection.close();
     })
     .catch(err => console.log(err));
-    // .finally(() => mongoose.connection.close());
 });

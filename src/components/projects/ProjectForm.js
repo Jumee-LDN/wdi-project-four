@@ -11,7 +11,7 @@ function ProjectForm({ handleChange, handleSubmit }) {
       <FormInput name="from" type="text" handleChange={handleChange}/>
       <FormInput name="to" type="text" handleChange={handleChange}/>
       <FormInput name="goal" type="number" handleChange={handleChange}/>
-      <FormTextarea name="description" handleChange={handleChange}/>
+      <FormTextarea name="story" handleChange={handleChange}/>
       <FormButton text="Create"/>
     </form>
   );
