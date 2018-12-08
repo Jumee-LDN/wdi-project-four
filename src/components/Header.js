@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { isAuthenticated, deleteToken, decodeToken } from '../lib/auth';
+import { isAuthenticated, deleteToken, tokenUsername } from '../lib/auth';
 
 
 class Header extends React.Component {
@@ -26,7 +26,7 @@ class Header extends React.Component {
           <Link to="/Projects">All Projects</Link>
           <Link to="/Register">Register</Link>
           <Link to="/Login">Login</Link>
-          {isAuthenticated() && <a onClick={this.handleLogout} >Log Out {decodeToken().username}</a>}
+          {isAuthenticated() && <a onClick={this.handleLogout} >Log Out {tokenUsername()}</a>}
         </div>
       </nav>
     );

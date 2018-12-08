@@ -2,8 +2,7 @@ import React from 'react';
 import FormTextarea from './formElements/FormTextarea';
 import FormButton from './formElements/FormButton';
 
-function ShowTemplate( { project, handleChange, createComment, deleteComment, isAuthenticated} ){
-
+function ShowTemplate( { project, handleChange, createComment, deleteComment, isAuthenticated, tokenUserId } ){
   return(
     <div className="columns is-multiline">
       <div>
@@ -31,7 +30,9 @@ function ShowTemplate( { project, handleChange, createComment, deleteComment, is
               comment => <div key={comment._id}>
                 <div> {comment.commentBy.username} {comment.text} </div>
                 <div className="media-right">
-                  {isAuthenticated() && <button className="delete" onClick={() => deleteComment(comment._id)}></button>}
+                  {isAuthenticated() && comment.commentBy._id === tokenUserId()
+                    && <button className="delete"
+                      onClick={() => deleteComment(comment._id)}></button>}
                 </div>
               </div>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ShowTemplate from './ShowTemplate';
 import { handleChange } from '../../lib/common';
-import { authorizationHeader, isAuthenticated } from '../../lib/auth';
+import { authorizationHeader, isAuthenticated, tokenUserId } from '../../lib/auth';
 
 export default class ProjectShow extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ export default class ProjectShow extends React.Component {
     this.createComment = this.createComment.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
     this.isAuthenticated = isAuthenticated.bind(this);
+    this.tokenUserId = tokenUserId.bind(this);
   }
 
   createComment(event) {
@@ -56,6 +57,7 @@ export default class ProjectShow extends React.Component {
               createComment = {this.createComment}
               deleteComment = {this.deleteComment}
               isAuthenticated = {this.isAuthenticated}
+              tokenUserId = {this.tokenUserId}
               project={project}
             />
           </div>
