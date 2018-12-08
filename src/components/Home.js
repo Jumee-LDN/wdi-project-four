@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { isAuthenticated, tokenUsername } from '../lib/auth';
 
 function Home() {
   return (
-    <div>
-      {isAuthenticated() && <p>Welcome back! {tokenUsername()}</p>}
-      <h1>What do you want to be?</h1>
-      <button><Link to="/Projects/new">Click to Change</Link></button>
-    </div>
+    <section className="section">
+      <div className="columns is-mobile"id="home">
+        <div className="column is-full">
+          <h3>Do you know there are 5million jobs in this world?</h3>
+          <h1>What do you want to be?</h1>
+          <button className="button is-large"><Link to="/Projects/new">I want to be</Link></button>
+        </div>
+      </div>
+    </section>
   );
 }
 

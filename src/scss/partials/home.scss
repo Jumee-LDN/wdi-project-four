@@ -1,0 +1,16 @@
+#home {
+  text-align: center;
+  padding: 3rem 0;
+  button {
+    margin: 2rem 0;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #home{
+    padding: 3.5rem 0;
+    button {
+      margin: 1.5rem 0;
+    }
+  }
+}

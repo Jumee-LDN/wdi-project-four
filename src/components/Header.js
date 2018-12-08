@@ -17,17 +17,24 @@ class Header extends React.Component {
   render() {
 
     return (
-      <nav>
-        <div>
-          <Link to="/">APP NAME HERE</Link>
-        </div>
-        <div>
-          <Link to="/projects">All Projects</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/login">Login</Link>
-          {isAuthenticated() && <a onClick={this.handleLogout} >Log Out {tokenUsername()}</a>}
-        </div>
-      </nav>
+      <header className="header">
+        <nav>
+          <div>
+            <Link to="/">APP NAME HERE</Link>
+          </div>
+          <div>
+            <Link to="/projects">All Projects</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
+            {isAuthenticated() && <a onClick={this.handleLogout} >Log Out {tokenUsername()}</a>}
+          </div>
+        </nav>
+        {isAuthenticated() &&
+          <div className="flash-message-container">
+            <p className="flash-message">Welcome back {tokenUsername()}</p>
+          </div>
+        }
+      </header>
     );
   }
 }

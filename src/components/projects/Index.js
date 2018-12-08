@@ -15,13 +15,18 @@ class ProjectIndex extends React.Component {
 
   render() {
     return (
-      <section>
-        <h1 className="title">All projects</h1>
-        <hr />
-        <div>
-          {this.state.projects && this.state.projects.map(
-            project => <IndexTemplate key={project._id} project={project}/>
-          )}
+      <section className="section">
+        <div className="project-container">
+          <div className="columns">
+            <div className="column is-full">
+              <h3>All projects</h3>
+            </div>
+          </div>
+          <div className="project-list">
+            {this.state.projects && this.state.projects.map(
+              project => <IndexTemplate key={project._id} project={project}/>
+            )}
+          </div>
         </div>
       </section>
     );
