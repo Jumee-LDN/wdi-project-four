@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ShowTemplate from './ShowTemplate';
 import { handleChange } from '../../lib/common';
-import { authorizationHeader } from '../../lib/auth';
+import { authorizationHeader, decodeToken } from '../../lib/auth';
 
 export default class ProjectShow extends React.Component {
   constructor(props) {
@@ -18,25 +18,38 @@ export default class ProjectShow extends React.Component {
     axios.post(`/api/projects/${this.props.match.params.id}/comments`, {
       text: this.state.text
     }, authorizationHeader())
-      .then(result => this.setState({ project: result.data }, () => {
-        console.log(result.data);
-      }));
+      .then(result => {
+        this.setState({
+          project: result.data
+        });
+      });
   }
 
   deleteComment(id) {
-    console.log('deleting comment', id);
-    axios.delete(`/api/projects/${this.props.match.params.id}/comments/${id}`,
-      authorizationHeader())
-      .then(() => this.setState({
-        text: this.state.text.filter(t => t._id !== id)
-      }));
+    const tokenUser = decodeToken().sub;
+    console.log('tokenUser is', tokenUser);
+
+    this.state.project.comments.forEach(c => {
+      if(tokenUser === c.commentBy._id){
+        console.log('found the commentCreator!!!', c.commentBy._id);
+        axios.delete(`/api/projects/${this.props.match.params.id}/comments/${id}`,
+          authorizationHeader())
+          .then((result) => {
+            this.setState({
+              project: result.data
+            });
+          }
+          );
+      }
+    });
+
   }
 
   componentDidMount() {
     axios.get(`/api/projects/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ project: res.data }, () => {
-          console.log('componentDidMount', this.state.project);
+          // console.log('componentDidMount', this.state.project);
         });
 
       });
