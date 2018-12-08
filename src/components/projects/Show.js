@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import ShowTemplate from './ShowTemplate';
+import ProjectDiscription from './ProjectDiscription';
+import SupportsTemplate from './SupportsTemplate';
+import CommentsTemplate from './CommentsTemplate';
 import { handleChange } from '../../lib/common';
 import { authorizationHeader, isAuthenticated, tokenUserId } from '../../lib/auth';
 
@@ -11,9 +13,21 @@ export default class ProjectShow extends React.Component {
     this.handleChange = handleChange.bind(this);
     this.createComment = this.createComment.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
+    this.createSupport = this.createSupport.bind(this);
     this.isAuthenticated = isAuthenticated.bind(this);
     this.tokenUserId = tokenUserId.bind(this);
   }
+
+  createSupport(event) {
+    event.preventDefault();
+    axios.post(`/api/projects/${this.props.match.params.id}/supports`, this.state, authorizationHeader())
+      .then(result => {
+        this.setState({
+          project: result.data
+        });
+      }, console.log(this.state));
+  }
+
 
   createComment(event) {
     event.preventDefault();
@@ -52,14 +66,28 @@ export default class ProjectShow extends React.Component {
         {project
           ?
           <div>
-            <ShowTemplate
-              handleChange = {this.handleChange}
-              createComment = {this.createComment}
-              deleteComment = {this.deleteComment}
-              isAuthenticated = {this.isAuthenticated}
-              tokenUserId = {this.tokenUserId}
-              project={project}
-            />
+            <section className="project-main">
+              <ProjectDiscription
+                project={project}
+              />
+            </section>
+            <section>
+              <SupportsTemplate
+                project={project}
+                handleChange = {this.handleChange}
+                createSupport = {this.createSupport}
+              />
+            </section>
+            <section className="comments-container">
+              <CommentsTemplate
+                handleChange = {this.handleChange}
+                createComment = {this.createComment}
+                deleteComment = {this.deleteComment}
+                isAuthenticated = {this.isAuthenticated}
+                tokenUserId = {this.tokenUserId}
+                project={project}
+              />
+            </section>
           </div>
           :
           <p>Please wait...</p>}

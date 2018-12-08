@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import AuthLogin from './components/auth/Login';
 import AuthRegister from './components/auth/Register';
+import Profile from './components/auth/Profile';
 import ProjectIndex from './components/projects/Index';
 import ProjectShow from './components/projects/Show';
 import ProjectNew from './components/projects/New';
@@ -29,6 +30,7 @@ class App extends React.Component {
               <Route exact path='/projects/:id' component={ProjectShow}/>
               <Route path="/login" component={AuthLogin} />
               <Route path="/register" component={AuthRegister} />
+              <Route path="/users/:id" component={Profile} />
             </Switch>
           </main>
         </div>
