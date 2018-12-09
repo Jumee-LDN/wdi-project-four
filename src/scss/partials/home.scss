@@ -1,8 +1,36 @@
 #home {
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 3rem;
+  margin: 0 1rem;
+  font-family: $main-font;
+  font-weight: 300;
+
   button {
-    margin: 2rem 0;
+    width: 12rem;
+    height: 4rem;
+    border-style: none;
+    border-bottom: 1px dotted #00000045;
+    font-size: 1.8rem;
+    font-family: $main-font;
+
+
+  }
+  button:hover{
+    border-bottom: 1px solid #00000045;
+  }
+  .flash-message-container {
+    height: 100px;
+    line-height: 6rem;
+    text-align: center;
+    .flash-message {
+      font-family: $main-font;
+      font-size: 1.8rem;
+    }
+  }
+
+  h3{
+    font-family: $support-font;
+
   }
 }
 
@@ -11,6 +39,15 @@
     padding: 3.5rem 0;
     button {
       margin: 1.5rem 0;
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .flash-message-container {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    .flash-message {
+      font-size: 14px;
     }
   }
 }

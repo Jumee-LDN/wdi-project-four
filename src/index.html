@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>WDI Project 4</title>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,500i,700,700i|Roboto:300,400,700" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
+    <script type="text/javascript">
+      (function() {
+        let burger = document.querySelector('.burger');
+        let nav = document.querySelector('#'+burger.dataset.target);
+        burger.addEventListener('click', function(){
+          burger.classList.toggle('is-active');
+          nav.classList.toggle('is-active');
+        });
+      })();
+    </script>
   </body>
 </html>

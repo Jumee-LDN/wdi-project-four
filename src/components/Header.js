@@ -14,26 +14,19 @@ class Header extends React.Component {
     this.props.history.push('/');
   }
 
-  render() {
 
+  render() {
     return (
       <header className="header">
-        <nav>
-          <div>
-            <Link to="/">APP NAME HERE</Link>
-          </div>
-          <div>
-            <Link to="/projects">All Projects</Link>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
-            {isAuthenticated() && <a onClick={this.handleLogout} >Log Out {tokenUsername()}</a>}
-          </div>
+        <div className="header-brand-container">
+          <Link to="/">NOMAD</Link>
+        </div>
+        <nav className="nav-container">
+          <Link to="/projects" className="nav-item" href="#">All Projects</Link>
+          {!isAuthenticated() && <Link to="/register" className="nav-item" href="#">Register</Link>}
+          {!isAuthenticated() && <Link to="/login" className="nav-item" href="#">Log in</Link>}
+          {isAuthenticated() && <a onClick={this.handleLogout}  className="nav-item">Log out {tokenUsername()}</a>}
         </nav>
-        {isAuthenticated() &&
-          <div className="flash-message-container">
-            <p className="flash-message">Welcome back {tokenUsername()}</p>
-          </div>
-        }
       </header>
     );
   }
