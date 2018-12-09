@@ -1,9 +1,102 @@
-.show-section {
-  background-color: grey;
-  padding: 2rem 4rem;
+%two-columns-layout{
+  display: flex;
+  justify-content: space-around;
+  height: 8rem;
+  font-family: $support-font;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+  padding-top: 1.8rem;
+  text-align: center;
+}
 
-  .project-main{
+%two-columns-column {
+  width: 50%;
+}
+
+%full-column {
+  padding: 0.5rem 1rem;
+}
+
+.show-section {
+  padding: 2rem 4rem;
+  font-family: $support-font;
+
+  .title-section {
+    @extend %sub-title-section;
+  }
+
+  .show-discription-container {
     background-color: pink;
     padding: 0;
+    padding-bottom: 2rem;
+
+    .project-title-container {
+      text-align: center;
+      background-color: lavenderblush;
+      font-family: $main-font;
+      .project-title {
+        background-color: aliceblue;
+        padding: 3rem 1rem 2rem 1rem;
+        h2 {
+          font-weight: 700;
+          padding-bottom: 0.5rem;
+          line-height: 3rem;
+        }
+        p {
+          .italic {
+            @extend %italic;
+          }
+          font-family: $support-font;
+          font-weight: 700;
+          font-size: 1rem;
+        }
+      }
+
+      .from-to {
+        @extend %two-columns-layout;
+        .from-container {
+          @extend %two-columns-column;
+        }
+        .to-container {
+          @extend %two-columns-column;
+        }
+        .italic {
+          @extend %italic;
+        }
+      }
+    }
+    .goal-remainder {
+      background-color: mintcream;
+      @extend %two-columns-layout;
+      font-size: 2.5rem;
+      .goal-container {
+        @extend %two-columns-column;
+      }
+      .remainder-container {
+        @extend %two-columns-column;
+        font-weight: 500;
+      }
+      .italic {
+        @extend %italic;
+      }
+    }
+
+    .story-container {
+      @extend %full-column;
+
+    }
   }
+
+  .show-support-container {
+    background-color: floralwhite;
+    @extend %full-column;
+
+
+  }
+  .comments-container {
+    background-color: honeydew;
+    padding-bottom: 2rem;
+  }
+
 }

@@ -5,7 +5,6 @@ import FormButton from './formElements/FormButton';
 function CommentsTemplate( { project, handleChange, createComment, deleteComment, isAuthenticated, tokenUserId } ){
   return(
     <div>
-      <hr />
       <div>
         <p>All comments</p>
         <div>

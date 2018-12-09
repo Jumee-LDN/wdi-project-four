@@ -66,12 +66,12 @@ export default class ProjectShow extends React.Component {
         {project
           ?
           <div>
-            <div className="project-main">
+            <div className="show-discription-container">
               <ProjectDiscription
                 project={project}
               />
             </div>
-            <div>
+            <div className="show-support-container">
               <SupportsTemplate
                 project={project}
                 handleChange = {this.handleChange}

@@ -5,8 +5,16 @@
   font-family: $main-font;
   font-weight: 300;
 
+  .home-message {
+    padding: 4rem;
+
+  }
   button {
     @extend %button-style;
+    #italic {
+      font-family: $main-font;
+      font-style: italic;
+    }
   }
   button:hover{
     border-bottom: 1px solid #00000045;

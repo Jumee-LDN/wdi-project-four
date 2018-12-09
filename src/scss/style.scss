@@ -12,6 +12,17 @@ $black: #363636;
   font-family: $main-font;
 }
 
+%italic {
+  font-family: $main-font;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+%sub-title-section {
+  font-family: $main-font;
+  padding: 1rem 0;
+}
 
 body {
   min-height: 500px;
@@ -29,7 +40,7 @@ body {
     font-size: 35px;
   }
   section {
-    padding: 3rem 5rem;
+    padding: 3rem 3rem;
   }
 }
 
@@ -51,4 +62,4 @@ body {
 @import 'partials/home';
 @import 'partials/index';
 @import 'partials/form';
-@import 'partials/show'
+@import 'partials/show';

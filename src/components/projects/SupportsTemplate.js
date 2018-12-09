@@ -5,9 +5,10 @@ import FormInput from './formElements/FormInput';
 function SupportsTemplate( { project, handleChange, createSupport } ){
   return(
     <div>
-      <div>
-        <p>Support </p>
+      <div className="title-section">
+        <h3>Support </h3>
       </div>
+      
       <div>
         { project.supports.length > 0 ?
           <div>

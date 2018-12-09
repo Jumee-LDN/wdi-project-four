@@ -12,9 +12,11 @@ function Home() {
       }
       <div className="columns">
         <div className="column is-full">
-          <h3>There are about 5 billion jobs in the world.</h3>
-          <h3>What do you want to be?</h3>
-          <button className="button"><Link to="/Projects/new">I want to be</Link></button>
+          <div className="home-message">
+            <h3>There are about 5 billion jobs in the world.</h3>
+            <h3>What do you want to be?</h3>
+          </div>
+          <button className="button"><Link to="/Projects/new" id="italic">I want to be</Link></button>
         </div>
       </div>
     </section>
