@@ -62,23 +62,23 @@ export default class ProjectShow extends React.Component {
   render() {
     const project = this.state.project;
     return (
-      <section>
+      <section className="show-section">
         {project
           ?
           <div>
-            <section className="project-main">
+            <div className="project-main">
               <ProjectDiscription
                 project={project}
               />
-            </section>
-            <section>
+            </div>
+            <div>
               <SupportsTemplate
                 project={project}
                 handleChange = {this.handleChange}
                 createSupport = {this.createSupport}
               />
-            </section>
-            <section className="comments-container">
+            </div>
+            <div className="comments-container">
               <CommentsTemplate
                 handleChange = {this.handleChange}
                 createComment = {this.createComment}
@@ -87,7 +87,7 @@ export default class ProjectShow extends React.Component {
                 tokenUserId = {this.tokenUserId}
                 project={project}
               />
-            </section>
+            </div>
           </div>
           :
           <p>Please wait...</p>}

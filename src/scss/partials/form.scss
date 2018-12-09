@@ -1,0 +1,49 @@
+%input-font-set {
+  font-family: $main-font;
+  box-shadow: none;
+  font-size: 1.5rem;
+}
+
+
+.form-section{
+  h3{
+    font-weight: 400;
+    font-family: $main-font;
+    margin-bottom: 1rem;
+  }
+  .form-container {
+    padding: 1rem 0;
+
+    .form-botton {
+      @extend %button-style;
+      text-align: left;
+    }
+    .form-botton:hover{
+      color: #363636;
+      border-bottom: 1px solid #00000045;
+    }
+
+    #form-input-container {
+
+      label{
+        font-family: $support-font;
+        font-weight: 300;
+        color: #00000096;
+      }
+      input {
+        @extend %input-font-set;
+        border-style: none;
+        height: 3.5rem;
+        border-bottom: 1px dotted #00000045;
+      }
+      input:hover{
+        border-bottom: 1px solid #00000045;
+      }
+
+      textarea{
+        @extend %input-font-set;
+        border: 1px dotted #00000045;
+      }
+    }
+  }
+}

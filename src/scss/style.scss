@@ -1,5 +1,17 @@
 $main-font: 'Cormorant Garamond', serif;
 $support-font: 'Roboto', sans-serif;
+$black: #363636;
+
+%button-style {
+  width: 12rem;
+  height: 4rem;
+  border-style: none;
+  border-bottom: 1px dotted #00000045;
+  color: #00000096;
+  font-size: 1.8rem;
+  font-family: $main-font;
+}
+
 
 body {
   min-height: 500px;
@@ -38,3 +50,5 @@ body {
 @import 'partials/header';
 @import 'partials/home';
 @import 'partials/index';
+@import 'partials/form';
+@import 'partials/show'

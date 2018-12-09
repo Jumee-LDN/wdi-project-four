@@ -6,12 +6,12 @@ import FormButton from './formElements/FormButton';
 
 function ProjectForm({ handleChange, handleSubmit }) {
   return(
-    <form onSubmit={handleSubmit}>
-      <FormInput name="title" type="text" handleChange={handleChange} />
-      <FormInput name="from" type="text" handleChange={handleChange}/>
-      <FormInput name="to" type="text" handleChange={handleChange}/>
-      <FormInput name="goal" type="number" handleChange={handleChange}/>
-      <FormTextarea name="story" handleChange={handleChange}/>
+    <form onSubmit={handleSubmit} className="form-container">
+      <FormInput name="project title" type="text" placeholder="Your project name" handleChange={handleChange} />
+      <FormInput name="from" type="text" placeholder="Current role" handleChange={handleChange}/>
+      <FormInput name="to" type="text" placeholder="Future role" handleChange={handleChange}/>
+      <FormInput name="goal" type="number" placeholder="100 coins" handleChange={handleChange}/>
+      <FormTextarea name="story" placeholder="Tell your story here..." handleChange={handleChange}/>
       <FormButton text="Create"/>
     </form>
   );
