@@ -23,7 +23,6 @@ function createRoute(req, res, next) {
     })
     .then(project => {
       Project.populate(project, 'createdBy');
-      console.log('line26 / req.body.createdBy is', req.body.createdBy);
       res.json(project);
     })
     .catch(next);
