@@ -23,7 +23,7 @@ function ProjectForm( props ) {
       </div>
       <div className="field" id="form-input-container">
         <label className="label is-size-5">Story</label>
-        <textarea className="textarea is-link" name="story" onChange={props.handleEditChange} value={props.project.goal || ''}></textarea>
+        <textarea className="textarea is-link" name="story" onChange={props.handleEditChange} value={props.project.story || ''}></textarea>
       </div>
 
       <FormButton text="Submit"/>

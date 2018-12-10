@@ -2,11 +2,21 @@
   font-family: $main-font;
   display: inline-block;
   width: 100%;
-  .header-brand-container{
-    height: 200px;
-    font-size: 3rem;
+  .header-brand-container {
+    height: 140px;
     line-height: 200px;
     text-align: center;
+    p {
+      font-size: 3rem;
+    }
+  }
+  .nomad-dictionary {
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    padding: 0 2rem;
+    height: 60px;
+
   }
   .nav-container {
     height: 100%;

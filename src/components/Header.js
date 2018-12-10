@@ -19,14 +19,18 @@ class Header extends React.Component {
     return (
       <header className="header">
         <div className="header-brand-container">
-          <Link to="/">NOMAD</Link>
+          <Link to="/"><p>NOMAD</p></Link>
+        </div>
+        <div>
+          <p className="nomad-dictionary">/ˈnəʊmad/ 1 1.1 A person who does not stay long in the same place; a wanderer.</p>
         </div>
         <nav className="nav-container">
           <Link to="/projects" className="nav-item" href="#">All Projects</Link>
+          <Link to="/projects/new" className="nav-item" href="#">Create Project</Link>
           {!isAuthenticated() && <Link to="/register" className="nav-item" href="#">Register</Link>}
-          {!isAuthenticated() && <Link to="/login" className="nav-item" href="#">Log in</Link>}
-          {isAuthenticated() && <Link to={`/users/${tokenUserId()}`} className="nav-item" href="#">Profile</Link>}
-          {isAuthenticated() && <a onClick={this.handleLogout}  className="nav-item">Log out {tokenUsername()}</a>}
+          {!isAuthenticated() && <Link to="/login" className="nav-item" href="#">Login</Link>}
+          {isAuthenticated() && <Link to={`/users/${tokenUserId()}`} className="nav-item" href="#">Your Page</Link>}
+          {isAuthenticated() && <a onClick={this.handleLogout}  className="nav-item">Logout {tokenUsername()}</a>}
         </nav>
       </header>
     );

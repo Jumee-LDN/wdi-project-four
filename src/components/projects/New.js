@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { handleChange } from '../../lib/common';
 import ProjectForm from './ProjectForm';
-import { authorizationHeader } from '../../lib/auth';
+import { handleChange } from '../../lib/common';
+import { authorizationHeader, isAuthenticated } from '../../lib/auth';
 
 export default class ProjectNew extends React.Component {
   constructor(props) {
@@ -22,6 +22,11 @@ export default class ProjectNew extends React.Component {
   render() {
     return(
       <section className="form-section">
+        {!isAuthenticated() &&
+          <div className="notice-message">
+            <p>Please login to proceed.</p>
+          </div>
+        }
         <h3>Add Your Project</h3>
         <ProjectForm
           handleChange = {this.handleChange}

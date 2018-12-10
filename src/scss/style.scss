@@ -42,6 +42,28 @@ body {
   section {
     padding: 3rem 3rem;
   }
+
+  .notice-message {
+    font-weight: 400;
+    padding: 1rem 0;
+    animation: bounce 3s infinite;
+    color: #00000045;
+  }
+  @keyframes bounce {
+  	0%, 20%, 60%, 100% {
+  		-webkit-transform: translateY(0);
+  		transform: translateY(0);
+  	}
+  	40% {
+  		-webkit-transform: translateY(-20px);
+  		transform: translateY(-20px);
+  	}
+  	80% {
+  		-webkit-transform: translateY(-10px);
+  		transform: translateY(-10px);
+  	}
+  }
+
 }
 
 @media only screen and (max-width: 960px) {
