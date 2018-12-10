@@ -40,8 +40,6 @@ export default class ProjectShow extends React.Component {
         this.setState({
           project: result.data,
           text: ''
-        }, () => {
-          console.log('this is the new state', this.state);
         });
       });
   }
@@ -50,9 +48,7 @@ export default class ProjectShow extends React.Component {
     axios.delete(`/api/projects/${this.props.match.params.id}/comments/${id}`,
       authorizationHeader())
       .then((result) => {
-        this.setState({
-          project: result.data
-        });
+        this.setState({ project: result.data });
       });
   }
 

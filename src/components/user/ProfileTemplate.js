@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getRandomInt } from '../../lib/common';
 
 function ProfileTemplate( { user } ){
   return(
@@ -12,7 +13,7 @@ function ProfileTemplate( { user } ){
         <div>
           { user.projectsCreated && user.projectsCreated.map(
             project =>
-              <div key="placeholder">
+              <div key={getRandomInt()}>
                 <Link to={`/projects/${project._id}`}><p>{ project.title }</p></Link>
               </div>
           )}
@@ -24,9 +25,9 @@ function ProfileTemplate( { user } ){
           { ( user.supportedByMe.length > 0) ?
             user.supportedByMe.map(
               project =>
-                <div key="placeholder">
+                <div key={getRandomInt()}>
                   <p>Supporting {user.supportedByMe.length}projects</p>
-                  <p>{ project.title }</p>
+                  <Link to={`/projects/${project._id}`}><p>{ project.title }</p></Link>
                 </div>
             )
             :
@@ -39,8 +40,8 @@ function ProfileTemplate( { user } ){
         <div>
           { user.commentedByMe && user.commentedByMe.map(
             project =>
-              <div key="placeholder">
-                <p>{ project.title }</p>
+              <div key={getRandomInt()}>
+                <Link to={`/projects/${project._id}`}><p>{ project.title }</p></Link>
               </div>
           )}
         </div>

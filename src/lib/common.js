@@ -9,3 +9,7 @@ export function handleChange(e) {
 export function onlyUnique(value, index, self){
   return self.indexOf(value) === index;
 }
+
+export function getRandomInt() {
+  return Math.random();
+}

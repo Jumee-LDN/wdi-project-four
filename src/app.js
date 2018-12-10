@@ -10,6 +10,7 @@ import Profile from './components/user/Profile';
 import ProjectIndex from './components/projects/Index';
 import ProjectShow from './components/projects/Show';
 import ProjectNew from './components/projects/New';
+import ProjectEdit from './components/projects/Edit';
 
 
 import 'bulma';
@@ -28,6 +29,7 @@ class App extends React.Component {
               <Route exact path='/projects' component={ProjectIndex}/>
               <Route exact path='/projects/new' component={ProjectNew}/>
               <Route exact path='/projects/:id' component={ProjectShow}/>
+              <Route exact path='/projects/:id/edit' component={ProjectEdit}/>
               <Route path="/login" component={AuthLogin} />
               <Route path="/register" component={AuthRegister} />
               <Route path="/users/:id" component={Profile} />

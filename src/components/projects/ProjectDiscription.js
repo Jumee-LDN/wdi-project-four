@@ -1,5 +1,6 @@
 import React from 'react';
 import { isAuthenticated , tokenUserId} from '../../lib/auth';
+import { Link } from 'react-router-dom';
 
 function ProjectDiscription( { project, deleteProject} ){
   return(
@@ -12,8 +13,14 @@ function ProjectDiscription( { project, deleteProject} ){
             <p><span className="italic">Project by</span> {project.createdBy.username}</p>
             <div className="delete-button">
               {isAuthenticated() && project.createdBy._id === tokenUserId()
-                && <button className="delete"
-                  onClick={() => deleteProject()}></button>}
+                &&
+                <div>
+                  <button className="delete-button"
+                    onClick={() => deleteProject()}>DELETE</button>
+
+                  <Link to={`/projects/${project._id}/edit`}><button>EDIT</button></Link>
+                </div>
+              }
             </div>          </div>
           <div className="from-to">
             <div className="from-container">
