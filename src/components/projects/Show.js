@@ -14,6 +14,7 @@ export default class ProjectShow extends React.Component {
     this.createComment = this.createComment.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
     this.createSupport = this.createSupport.bind(this);
+    this.deleteProject = this.deleteProject.bind(this);
     this.isAuthenticated = isAuthenticated.bind(this);
     this.tokenUserId = tokenUserId.bind(this);
   }
@@ -55,6 +56,15 @@ export default class ProjectShow extends React.Component {
       });
   }
 
+  deleteProject() {
+    axios.delete(`/api/projects/${this.props.match.params.id}`,
+      authorizationHeader())
+      .then(() => this.props.history.push('/projects'))
+      .catch(() => {
+        this.props.history.replace('/projects');
+      });
+  }
+
   componentDidMount() {
     axios.get(`/api/projects/${this.props.match.params.id}`)
       .then(res => {
@@ -73,7 +83,9 @@ export default class ProjectShow extends React.Component {
             <div className="show-discription-container">
               <ProjectDiscription
                 project={project}
+                deleteProject = {this.deleteProject}
               />
+
             </div>
             <div className="show-support-container">
               <SupportsTemplate

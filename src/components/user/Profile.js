@@ -8,7 +8,9 @@ class Profile extends React.Component {
     super(props);
     this.state = {};
     this.onlyUnique = onlyUnique.bind(this);
+
   }
+
 
   componentDidMount() {
     axios.get(`/api/users/${this.props.match.params.id}`)

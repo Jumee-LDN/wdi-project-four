@@ -11,7 +11,7 @@ function CommentsTemplate( { project, handleChange, createComment, deleteComment
           {project.comments && project.comments.map(
             comment => <div key={comment._id}>
               <div> {comment.commentBy.username} {comment.text} </div>
-              <div className="media-right">
+              <div className="delete-button">
                 {isAuthenticated() && comment.commentBy._id === tokenUserId()
                   && <button className="delete"
                     onClick={() => deleteComment(comment._id)}></button>}

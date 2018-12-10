@@ -1,6 +1,7 @@
 import React from 'react';
+import { isAuthenticated , tokenUserId} from '../../lib/auth';
 
-function ProjectDiscription( { project } ){
+function ProjectDiscription( { project, deleteProject} ){
   return(
     <div>
       <article>
@@ -9,7 +10,11 @@ function ProjectDiscription( { project } ){
           <div className="project-title">
             <h2>{project.title}</h2>
             <p><span className="italic">Project by</span> {project.createdBy.username}</p>
-          </div>
+            <div className="delete-button">
+              {isAuthenticated() && project.createdBy._id === tokenUserId()
+                && <button className="delete"
+                  onClick={() => deleteProject()}></button>}
+            </div>          </div>
           <div className="from-to">
             <div className="from-container">
               <p><span className="italic">From</span><br />{project.from}</p>

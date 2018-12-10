@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProfileTemplate( { user } ){
   return(
@@ -12,7 +13,7 @@ function ProfileTemplate( { user } ){
           { user.projectsCreated && user.projectsCreated.map(
             project =>
               <div key="placeholder">
-                <p>{ project.title }</p>
+                <Link to={`/projects/${project._id}`}><p>{ project.title }</p></Link>
               </div>
           )}
         </div>
