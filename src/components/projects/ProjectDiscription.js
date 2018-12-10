@@ -6,12 +6,12 @@ function ProjectDiscription( { project, deleteProject} ){
   return(
     <div>
       <article>
-
         <div className="project-title-container">
+
           <div className="project-title">
             <h2>{project.title}</h2>
             <p><span className="italic">Project by</span> {project.createdBy.username}</p>
-            <div className="delete-button">
+            <div className="edit-delete">
               {isAuthenticated() && project.createdBy._id === tokenUserId()
                 &&
                 <div>
@@ -21,7 +21,9 @@ function ProjectDiscription( { project, deleteProject} ){
                   <Link to={`/projects/${project._id}/edit`}><button>EDIT</button></Link>
                 </div>
               }
-            </div>          </div>
+            </div>
+          </div>
+
           <div className="from-to">
             <div className="from-container">
               <p><span className="italic">From</span><br />{project.from}</p>
@@ -30,6 +32,7 @@ function ProjectDiscription( { project, deleteProject} ){
               <p><span className="italic">to</span><br/>{project.to}</p>
             </div>
           </div>
+
         </div>
 
         <div className="goal-remainder">

@@ -1,18 +1,32 @@
 import React from 'react';
 
-import FormInput from './editFormElements/FormInput';
-import FormTextarea from './editFormElements/FormTextarea';
-import FormButton from './editFormElements/FormButton';
+import FormButton from './formElements/FormButton';
 
-function ProjectForm({ handleEditChange, handleSubmit }) {
+function ProjectForm( props ) {
   return(
-    <form onSubmit={handleSubmit} className="form-container">
-      <FormInput name="title" type="text" placeholder="Your project title" handleChange={handleEditChange} />
-      <FormInput name="from" type="text" placeholder="Current role" handleChange={handleEditChange}/>
-      <FormInput name="to" type="text" placeholder="Future role" handleChange={handleEditChange}/>
-      <FormInput name="goal" type="number" placeholder="100 coins" handleChange={handleEditChange}/>
-      <FormTextarea name="story" placeholder="Tell your story here..." handleChange={handleEditChange}/>
-      <FormButton text="Create"/>
+    <form onSubmit={props.handleSubmit} className="form-container">
+      <div className="field" id="form-input-container">
+        <label className="label is-size-5">Project title</label>
+        <input className="input is-link" name="title" type="text" onChange={props.handleEditChange} value={props.project.title || ''}/>
+      </div>
+      <div className="field" id="form-input-container">
+        <label className="label is-size-5">From</label>
+        <input className="input is-link" name="from" type="text" onChange={props.handleEditChange} value={props.project.from || ''}/>
+      </div>
+      <div className="field" id="form-input-container">
+        <label className="label is-size-5">To</label>
+        <input className="input is-link" name="to" type="text" onChange={props.handleEditChange} value={props.project.to || ''}/>
+      </div>
+      <div className="field" id="form-input-container">
+        <label className="label is-size-5">Goal</label>
+        <input className="input is-link" name="goal" type="number" min="1" onChange={props.handleEditChange} value={props.project.goal || ''}/>
+      </div>
+      <div className="field" id="form-input-container">
+        <label className="label is-size-5">Story</label>
+        <textarea className="textarea is-link" name="story" onChange={props.handleEditChange} value={props.project.goal || ''}></textarea>
+      </div>
+
+      <FormButton text="Submit"/>
     </form>
   );
 }

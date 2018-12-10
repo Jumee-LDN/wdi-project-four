@@ -13,8 +13,8 @@ router.route('/projects')
 
 router.route('/projects/:id')
   .get(projects.show)
-  .put(projects.update)
-  .delete(projects.delete);
+  .put(secureRoute, projects.update)
+  .delete(secureRoute, projects.delete);
 
 router.post('/projects/:id/supports', secureRoute, supports.create);
 

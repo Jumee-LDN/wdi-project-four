@@ -15,24 +15,39 @@ export default class ProjectEdit extends React.Component {
     this.handleEditChange = this.handleEditChange.bind(this);
   }
 
-  handleEditChange({ target: {name, value}}) {
-    this.setState({project: { ...this.state.project, [name]: value}});
+  handleEditChange(event) {
+    const { target: {name, value} } = event;
+    this.setState({ project: { ...this.state.project, [name]: value} });
   }
+
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('Project submit handled', this.state);
-    axios.put('/api/projects', this.state, authorizationHeader())
-      .then(() => this.props.history.push('/projects'));
+    console.log('Project edit submit handled this.state is', this.state);
+    axios.put(`/api/projects/${this.props.match.params.id}`, this.state.project, authorizationHeader())
+      .then(() => {
+        this.props.history.push(`/projects/${this.props.match.params.id}`);
+      });
+  }
+
+  componentDidMount() {
+    axios.get(`/api/projects/${this.props.match.params.id}`)
+      .then(result => {
+        this.setState({ project: result.data });
+      });
   }
 
   render() {
+    const project = this.state.project;
+
     return(
       <section className="form-section">
-        <h3>Add Your Project</h3>
+        <h3>Edit Your Project</h3>
         <ProjectEditForm
           handleEditChange = {this.handleEditChange}
           handleSubmit = {this.handleSubmit}
+          project = {project}
+          {...this.state}
         />
       </section>
     );
