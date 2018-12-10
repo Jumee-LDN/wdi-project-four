@@ -3,7 +3,7 @@ const Project = require('../models/project');
 
 function createRoute(req, res, next){
   req.body.commentBy = req.tokenUserId;
-  console.log(`req.body is: ${req.body}, req.params.projectId is ${req.params.projectId}`);
+  console.log('this is req.body ', req.body);
   Project
     .findById(req.params.projectId)
     .populate('comments.commentBy')
@@ -13,6 +13,7 @@ function createRoute(req, res, next){
       console.log('creating a comment', req.body);
       return project.save();
     })
+    .then(project => Project.populate(project, 'comments.commentBy'))
     .then(project => res.json(project))
     .catch(next);
 }

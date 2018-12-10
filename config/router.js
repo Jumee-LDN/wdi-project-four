@@ -9,7 +9,7 @@ const secureRoute = require('../lib/secureRoute');
 
 router.route('/projects')
   .get(projects.index)
-  .post(projects.create);
+  .post(secureRoute, projects.create);
 
 router.route('/projects/:id')
   .get(projects.show)

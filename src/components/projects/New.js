@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { handleChange } from '../../lib/common';
 import ProjectForm from './ProjectForm';
+import { authorizationHeader, isAuthenticated, tokenUserId } from '../../lib/auth';
 
 export default class ProjectNew extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class ProjectNew extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('Project submit handled', this.state);
-    axios.post('/api/projects', this.state)
+    axios.post('/api/projects', this.state, authorizationHeader())
       .then(() => this.props.history.push('/projects'));
   }
 

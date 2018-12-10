@@ -16,7 +16,6 @@ const projectSchema = new mongoose.Schema({
     }
   ],
   supports: [
-    // { type: mongoose.Schema.ObjectId, ref: 'Support' }
     {
       from: { type: mongoose.Schema.ObjectId, ref: 'User' },
       amount: { type: Number, required: true }

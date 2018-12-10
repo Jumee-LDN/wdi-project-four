@@ -2,7 +2,7 @@ import React from 'react';
 import FormTextarea from './formElements/FormTextarea';
 import FormButton from './formElements/FormButton';
 
-function CommentsTemplate( { project, handleChange, createComment, deleteComment, isAuthenticated, tokenUserId } ){
+function CommentsTemplate( { project, handleChange, createComment, deleteComment, isAuthenticated, tokenUserId, text } ){
   return(
     <div>
       <div>
@@ -20,7 +20,7 @@ function CommentsTemplate( { project, handleChange, createComment, deleteComment
           )}
         </div>
         <form onSubmit={createComment}>
-          <FormTextarea name="Comment" handleChange={handleChange}/>
+          <FormTextarea name="text" text={text} handleChange={handleChange}/>
           <FormButton text="Submit Comment"/>
         </form>
       </div>

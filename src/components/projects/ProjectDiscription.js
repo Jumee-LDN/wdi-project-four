@@ -8,7 +8,7 @@ function ProjectDiscription( { project } ){
         <div className="project-title-container">
           <div className="project-title">
             <h2>{project.title}</h2>
-            <p><span className="italic">Project by</span> {project.createdBy}</p>
+            <p><span className="italic">Project by</span> {project.createdBy.username}</p>
           </div>
           <div className="from-to">
             <div className="from-container">

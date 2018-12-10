@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { isAuthenticated, deleteToken, tokenUsername } from '../lib/auth';
+import { isAuthenticated, deleteToken, tokenUsername, tokenUserId } from '../lib/auth';
 
 
 class Header extends React.Component {
@@ -25,6 +25,7 @@ class Header extends React.Component {
           <Link to="/projects" className="nav-item" href="#">All Projects</Link>
           {!isAuthenticated() && <Link to="/register" className="nav-item" href="#">Register</Link>}
           {!isAuthenticated() && <Link to="/login" className="nav-item" href="#">Log in</Link>}
+          {isAuthenticated() && <Link to={`/users/${tokenUserId()}`} className="nav-item" href="#">Profile</Link>}
           {isAuthenticated() && <a onClick={this.handleLogout}  className="nav-item">Log out {tokenUsername()}</a>}
         </nav>
       </header>

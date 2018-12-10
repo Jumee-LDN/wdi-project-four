@@ -8,16 +8,23 @@ function indexRoute(req, res, next) {
 
 function showRoute(req, res, next) {
   Project.findById(req.params.id)
-    .populate('comments.commentBy')
+    .populate('comments.commentBy createdBy')
     .then(project => res.json(project))
     .catch(next);
 }
 
 function createRoute(req, res, next) {
+  req.body.createdBy = req.tokenUserId;
+
   Project.create(req.body)
     .then(project => {
-      console.log(`creating project, req.body is ${req.body}`);
+      console.log('creating project, req.body is', req.body);
       res.status(201).json(project);
+    })
+    .then(project => {
+      Project.populate(project, 'createdBy');
+      console.log('req.body.createdBy is', req.body.createdBy);
+      res.json(project);
     })
     .catch(next);
 }

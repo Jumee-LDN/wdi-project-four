@@ -31,12 +31,16 @@ export default class ProjectShow extends React.Component {
 
   createComment(event) {
     event.preventDefault();
-    axios.post(`/api/projects/${this.props.match.params.id}/comments`, {
-      text: this.state.text
-    }, authorizationHeader())
+    console.log(authorizationHeader());
+    axios.post(`/api/projects/${this.props.match.params.id}/comments`,
+      this.state, authorizationHeader())
       .then(result => {
+        console.log(result);
         this.setState({
-          project: result.data
+          project: result.data,
+          text: ''
+        }, () => {
+          console.log('this is the new state', this.state);
         });
       });
   }
@@ -86,6 +90,7 @@ export default class ProjectShow extends React.Component {
                 isAuthenticated = {this.isAuthenticated}
                 tokenUserId = {this.tokenUserId}
                 project={project}
+                text={this.state.text}
               />
             </div>
           </div>
