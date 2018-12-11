@@ -18,6 +18,17 @@
   padding: 0.5rem 1rem;
 }
 
+%show-button-style {
+  width: 6rem;
+  height: 3rem;
+  border-style: none;
+  border-bottom: 1px dotted #00000045;
+  color: #00000096;
+  background-color: inherit;
+  font-size: 1.5rem;
+  font-family: $main-font;
+}
+
 .show-section {
   padding: 2rem 4rem;
   font-family: $support-font;
@@ -91,12 +102,54 @@
   .show-support-container {
     background-color: floralwhite;
     @extend %full-column;
-
-
+    padding-bottom: 2rem;
+    input {
+      border: 1px dotted #00000045;
+      background-color: rgba(255, 255, 255, 0.5);
+      @extend %input-style;
+      height: 3rem;
+    }
+    input:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    button {
+      @extend %show-button-style;
+    }
   }
+
   .comments-container {
+    @extend %full-column;
     background-color: honeydew;
     padding-bottom: 2rem;
+    button {
+      @extend %show-button-style;
+    }
+    .comment-text-box {
+      display: flex;
+      border-bottom: 1px dotted #00000045;
+      padding: 1rem 0 0.3rem 0;
+      .delete-comment-button {
+        border-bottom: none;
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+        i {
+          color: #00000045;
+        }
+      }
+    }
+    textarea {
+      @extend %input-font-set;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: 1px dotted #00000045;
+      margin-top: 1.5rem;
+    }
+    textarea:focus {
+      outline: none;
+    }
+    textarea:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
   }
 
 }
