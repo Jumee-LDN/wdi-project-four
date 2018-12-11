@@ -14,6 +14,8 @@ function ProfileTemplate( { user } ){
     return !this[project.title] && (this[project.title] = true);
   }, Object.create(null));
 
+  console.log('user.projectsCreated.length', user.projectsCreated.length);
+
   return(
     <div>
       <div className="title-section">
@@ -24,15 +26,15 @@ function ProfileTemplate( { user } ){
           <h3>My projects</h3>
         </div>
         <div className="content-box">
-          { (user.projectsCreated.length > 0)  ? user.projectsCreated.map(
-            project => {
+          <p className="count-note">{user.projectsCreated.length} projects created</p>
+          { (user.projectsCreated.length > 0) ? user.projectsCreated.map(
+            project =>
               <div key={getRandomInt()} className="project-title">
                 <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
-              </div>;
-            }
+              </div>
           )
             :
-            <p className="count-note">0 projects created</p>
+            <p className="count-note"></p>
           }
         </div>
       </div>
@@ -41,7 +43,7 @@ function ProfileTemplate( { user } ){
           <h3>Supporting Projects</h3>
         </div>
         <div className="content-box">
-          <p className="count-note">Supporting {user.supportedByMe.length-1} projects</p>
+          <p className="count-note">Supporting {user.supportedByMe.length} projects</p>
           { ( user.supportedByMe.length > 0) ?
             uniqueProjectsSupportedByMe.map(
               project =>
@@ -50,7 +52,7 @@ function ProfileTemplate( { user } ){
                 </div>
             )
             :
-            <p className="count-note">Supporting 0 projects</p>
+            <p className="count-note"></p>
           }
         </div>
       </div>
@@ -59,7 +61,7 @@ function ProfileTemplate( { user } ){
           <h3>Projects commented by me</h3>
         </div>
         <div className="content-box">
-          <p className="count-note">Commented on {user.commentedByMe.length-1} projects</p>
+          <p className="count-note">Commented on {user.commentedByMe.length} projects</p>
           { ( user.commentedByMe.length > 0 ) ?
             uniqueProjectsCommentedByMe.map(
               project =>
@@ -68,7 +70,7 @@ function ProfileTemplate( { user } ){
                 </div>
             )
             :
-            <p className="count-note">Commented on 0 projects</p>
+            <p className="count-note"></p>
           }
         </div>
       </div>
