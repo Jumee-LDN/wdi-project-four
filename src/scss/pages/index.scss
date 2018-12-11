@@ -1,9 +1,10 @@
 .index-section {
   padding: 2rem 4rem;
   font-family: $support-font;
+  background-color: mintcream;
+  padding-bottom: 5rem;
 
   .title-section {
-    background-color: mintcream;
     @extend %sub-title-section;
     @extend %full-column;
     height: 100px;
@@ -30,12 +31,12 @@
       height: 300px;
       display: flex;
       overflow-y: hidden;
-      white-space: nowrap;
+
       padding: 0.5rem 0;
 
       .index-project {
         font-family: $main-font;
-        background-color: lavenderblush;
+        background-color: mistyrose;
         white-space: normal;
         margin-right: 2rem;
         padding: 1rem 2rem;

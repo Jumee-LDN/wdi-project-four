@@ -21,7 +21,7 @@ export default class ProjectNew extends React.Component {
 
   render() {
     return(
-      <section className="form-section">
+      <section className="form-section" id="new-page">
         {!isAuthenticated() &&
           <div className="notice-message">
             <p>Please login to proceed.</p>

@@ -2,9 +2,9 @@
   padding: 2rem 4rem;
   font-family: $support-font;
   background-color: seashell;
+  padding-bottom: 5rem;
 
   .title-section {
-    background-color: mintcream;
     @extend %sub-title-section;
     @extend %full-column;
     height: 100px;
@@ -17,15 +17,17 @@
   .category-title {
     background-color: ivory;
     @extend %full-column;
-    height: 100px;
+    min-height: 120px;
+    position: relative;
     h3 {
-      line-height: 8rem;
+      line-height: 2.2rem;
       font-weight: 300;
+      position: absolute;
+      bottom: 0.5rem;
     }
   }
 
   .content-box {
-    background-color: aliceblue;
     padding-bottom: 2rem;
     @extend %full-column;
     font-family: $main-font;

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import AuthLogin from './components/auth/Login';
 import AuthRegister from './components/auth/Register';
@@ -35,6 +36,7 @@ class App extends React.Component {
               <Route path="/users/:id" component={Profile} />
             </Switch>
           </main>
+          <Footer />
         </div>
       </BrowserRouter>
     );

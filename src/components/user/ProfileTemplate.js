@@ -24,8 +24,7 @@ function ProfileTemplate( { user } ){
           <h3>My projects</h3>
         </div>
         <div className="content-box">
-          <p className="count-note">{user.projectsCreated.length-1} projects created</p>
-          { user.projectsCreated ? user.projectsCreated.map(
+          { (user.projectsCreated.length > 0)  ? user.projectsCreated.map(
             project => {
               <div key={getRandomInt()} className="project-title">
                 <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
@@ -33,7 +32,7 @@ function ProfileTemplate( { user } ){
             }
           )
             :
-            <p className="count-note">{user.projectsCreated.length-1} projects created</p>
+            <p className="count-note">0 projects created</p>
           }
         </div>
       </div>
@@ -51,7 +50,7 @@ function ProfileTemplate( { user } ){
                 </div>
             )
             :
-            <p className="count-note">Supporting {user.supportedByMe.length-1} projects</p>
+            <p className="count-note">Supporting 0 projects</p>
           }
         </div>
       </div>
@@ -69,7 +68,7 @@ function ProfileTemplate( { user } ){
                 </div>
             )
             :
-            <p className="count-note">Commented on {user.commentedByMe.length-1} projects</p>
+            <p className="count-note">Commented on 0 projects</p>
           }
         </div>
       </div>

@@ -34,8 +34,10 @@ $light-grey: #a9a9a9bf;
 }
 
 body {
-  min-height: 500px;
   color: #00000096;
+  main {
+    min-height: 400px;
+  }
   a {
     color: #00000096;
   }
@@ -93,8 +95,10 @@ body {
 }
 
 @import 'partials/header';
+@import 'partials/form';
+@import 'partials/footer';
 @import 'pages/home';
 @import 'pages/index';
-@import 'partials/form';
 @import 'pages/show';
 @import 'pages/profile';
+@import 'pages/new';

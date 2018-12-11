@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-
 %show-button-style {
   width: 6rem;
   height: 3rem;
@@ -25,22 +24,19 @@
 .show-section {
   padding: 2rem 4rem;
   font-family: $support-font;
-
+  background-color: aliceblue;
+  padding-bottom: 5rem;
   .title-section {
     @extend %sub-title-section;
   }
 
   .show-discription-container {
-    background-color: pink;
     padding: 0;
-    padding-bottom: 2rem;
 
     .project-title-container {
       text-align: center;
-      background-color: lavenderblush;
       font-family: $main-font;
       .project-title {
-        background-color: aliceblue;
         padding: 3rem 1rem 2rem 1rem;
         h2 {
           font-weight: 700;
@@ -58,6 +54,7 @@
       }
 
       .from-to {
+        background-color: lavenderblush;
         @extend %two-columns-layout;
         .from-container {
           @extend %two-columns-column;
@@ -88,7 +85,8 @@
 
     .story-container {
       @extend %full-column;
-
+      background-color: snow;
+      padding-bottom: 2rem;
     }
   }
 
@@ -99,14 +97,19 @@
     input {
       border: 1px dotted #00000045;
       background-color: rgba(255, 255, 255, 0.5);
+      border: 1px dotted #00000045;
       @extend %input-style;
+      @extend %input-font-set;
       height: 3rem;
+
     }
     input:hover {
       background-color: inherit;
     }
     button {
       @extend %show-button-style;
+      box-shadow: none;
+
     }
   }
 
@@ -132,6 +135,8 @@
       }
     }
     textarea {
+      box-shadow: none;
+      border-style: none;
       @extend %input-font-set;
       background-color: rgba(255, 255, 255, 0.5);
       border: 1px dotted #00000045;
