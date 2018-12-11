@@ -37,6 +37,7 @@ body {
   color: #00000096;
   main {
     min-height: 400px;
+    // min-width: 1280px;
   }
   a {
     color: #00000096;
@@ -78,20 +79,6 @@ body {
   	}
   }
 
-}
-
-@media only screen and (max-width: 960px) {
-  body{
-    h1 {
-      font-size: 65px;
-    }
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  h1 {
-    font-size: 60px;
-  }
 }
 
 @import 'partials/header';

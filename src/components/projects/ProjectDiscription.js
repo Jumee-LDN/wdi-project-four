@@ -41,7 +41,12 @@ function ProjectDiscription( { project, deleteProject} ){
           </div>
 
           <div className="remainder-container">
-            <p><span className="italic">Remainder</span><br/>{project.remainder}</p>
+            {
+              (project.remainder > 0 ) ?
+                <p><span className="italic">Remainder</span><br/>{project.remainder}</p>
+                :
+                <p className="project-fin-message">Project accomplished!</p>
+            }
           </div>
         </div>
 

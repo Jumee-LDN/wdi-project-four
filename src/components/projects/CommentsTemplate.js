@@ -11,8 +11,8 @@ function CommentsTemplate( props ){
         <div>
           {props.project.comments && props.project.comments.map(
             comment => <div key={comment._id} className="comment-text-box">
-              <div> {comment.commentBy.username} {comment.text} </div>
               <div>
+                <span className="comment-username">{comment.commentBy.username}</span> {comment.text}
                 {props.isAuthenticated() && comment.commentBy._id === props.tokenUserId()
                   && <button className="delete-comment-button"
                     onClick={() => props.deleteComment(comment._id)}><i className="fas fa-backspace"></i></button>}
