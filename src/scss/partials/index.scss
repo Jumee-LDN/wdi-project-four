@@ -1,44 +1,73 @@
 .index-section {
-  background-color: mintcream;
   padding: 2rem 4rem;
   font-family: $support-font;
 
   .title-section {
+    background-color: mintcream;
     @extend %sub-title-section;
     @extend %full-column;
     height: 100px;
-    line-height: 5rem;
-    background-color: lavenderblush;
+    h3 {
+      padding-bottom: 0.2rem;
+      line-height: 3rem;
+    }
   }
-  .project-list-container {
-    background-color: floralwhite;
-    height: 300px;
-    display: flex;
-    overflow-y: hidden;
-    white-space: nowrap;
+
+  .index-category-title {
     @extend %full-column;
+    h3 {
+      font-weight: 300;
+    }
+  }
 
-    .index-project {
-      font-family: $main-font;
-      background-color: snow;
-      white-space: normal;
-      margin: 0 0.5rem;
-      padding: 1rem;
-      height: 280px;
-      width: 280px;
-      flex: 0 0 auto;
+  .project-list-section {
 
+    margin-bottom: 2rem;
 
+    .project-list-container {
+      border-left: 1px dotted grey;
+      border-right: 1px dotted grey;
+      height: 300px;
+      display: flex;
+      overflow-y: hidden;
+      white-space: nowrap;
+      padding: 0.5rem 0;
 
-      .project-title {
-        h2 {
-          font-weight: 700;
-          padding-bottom: 0.5rem;
-          line-height: 3rem;
+      .index-project {
+        font-family: $main-font;
+        background-color: lavenderblush;
+        white-space: normal;
+        margin-right: 2rem;
+        padding: 1rem 2rem;
+        height: 285px;
+        width: 285px;
+        flex: 0 0 auto;
+
+        .caption {
+          @extend %italic;
+          font-size: 1.5rem;
+          color: $light-grey;
+        }
+
+        .project-title {
+          .job-title {
+            font-weight: 700;
+            padding: 0.5rem 0;
+            line-height: 3rem;
+            border-bottom: 1px dotted #00000045;
+          }
+        }
+        h4 {
+          font-family: $support-font;
+          font-weight: 300;
+          .project-by{
+            font-size: 1rem;
+            @extend %italic;
+          }
         }
       }
-    }
 
+    }
   }
 
 }

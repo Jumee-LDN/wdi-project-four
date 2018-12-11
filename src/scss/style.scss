@@ -1,6 +1,7 @@
 $main-font: 'Cormorant Garamond', serif;
 $support-font: 'Roboto', sans-serif;
 $black: #363636;
+$light-grey: #a9a9a9bf;
 
 %button-style {
   width: 12rem;
@@ -46,6 +47,9 @@ body {
   }
   h3 {
     font-size: 35px;
+  }
+  h4 {
+    font-size: 25px;
   }
   section {
     padding: 3rem 3rem;
