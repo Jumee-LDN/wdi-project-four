@@ -2,6 +2,7 @@ const Project = require('../models/project');
 
 function indexRoute(req, res, next) {
   Project.find()
+    .populate('createdBy')
     .then(projects => res.json(projects))
     .catch(next);
 }

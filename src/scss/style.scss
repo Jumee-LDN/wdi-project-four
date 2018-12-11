@@ -24,6 +24,13 @@ $black: #363636;
   padding: 1rem 0;
 }
 
+%two-columns-column {
+  width: 50%;
+}
+
+%full-column {
+  padding: 0.5rem 1rem;
+}
 
 body {
   min-height: 500px;

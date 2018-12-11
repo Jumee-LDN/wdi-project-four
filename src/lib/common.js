@@ -5,11 +5,16 @@ export function handleChange(e) {
   });
 }
 
-
 export function onlyUnique(value, index, self){
   return self.indexOf(value) === index;
 }
 
 export function getRandomInt() {
   return Math.random();
+}
+
+
+export function titling(word) {
+  word = word.toLowerCase();
+  return word[0].toUpperCase() + word.substr(1, word.length - 1);
 }

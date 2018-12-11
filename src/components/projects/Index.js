@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import IndexTemplate from './IndexTemplate';
+import { titling } from '../../lib/common';
 
 class ProjectIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.titling = titling.bind(this);
   }
 
   componentDidMount() {
@@ -15,18 +17,20 @@ class ProjectIndex extends React.Component {
 
   render() {
     return (
-      <section className="section">
-        <div className="project-container">
-          <div className="columns">
-            <div className="column is-full">
-              <h3>All projects</h3>
-            </div>
+      <section className="index-section">
+        <div className="title-section">
+          <div>
+            <h3>All Projects</h3>
           </div>
-          <div className="project-list">
-            {this.state.projects && this.state.projects.map(
-              project => <IndexTemplate key={project._id} project={project}/>
-            )}
-          </div>
+        </div>
+        <div className="project-list-container">
+          {this.state.projects && this.state.projects.map(
+            project => <IndexTemplate
+              key={project._id}
+              project={project}
+              titling={this.titling}
+            />
+          )}
         </div>
       </section>
     );
