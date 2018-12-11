@@ -29,8 +29,8 @@ class Header extends React.Component {
           <Link to="/projects/new" className="nav-item" href="#">Create Project</Link>
           {!isAuthenticated() && <Link to="/register" className="nav-item" href="#">Register</Link>}
           {!isAuthenticated() && <Link to="/login" className="nav-item" href="#">Login</Link>}
-          {isAuthenticated() && <Link to={`/users/${tokenUserId()}`} className="nav-item" href="#">Your Page</Link>}
-          {isAuthenticated() && <a onClick={this.handleLogout}  className="nav-item">Logout {tokenUsername()}</a>}
+          {isAuthenticated() && <Link to={`/users/${tokenUserId()}`} className="nav-item" href="#">{tokenUsername()}'s Page</Link>}
+          {isAuthenticated() && <a onClick={this.handleLogout}  className="nav-item">Logout</a>}
         </nav>
       </header>
     );

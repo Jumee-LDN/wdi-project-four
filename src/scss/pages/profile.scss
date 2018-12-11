@@ -1,0 +1,44 @@
+.profile-section {
+  padding: 2rem 4rem;
+  font-family: $support-font;
+  background-color: seashell;
+
+  .title-section {
+    background-color: mintcream;
+    @extend %sub-title-section;
+    @extend %full-column;
+    height: 100px;
+    h3 {
+      padding-bottom: 0.2rem;
+      line-height: 3rem;
+    }
+  }
+
+  .category-title {
+    background-color: ivory;
+    @extend %full-column;
+    height: 100px;
+    h3 {
+      line-height: 8rem;
+      font-weight: 300;
+    }
+  }
+
+  .content-box {
+    background-color: aliceblue;
+    padding-bottom: 2rem;
+    @extend %full-column;
+    font-family: $main-font;
+    font-size: 2rem;
+    .project-title {
+      border-bottom: 1px dotted #00000045;
+      padding-top: 1.8rem;
+      line-height: 1.8rem;
+    }
+    .count-note {
+      font-family: $support-font;
+      font-size: 1rem;
+      color: $light-grey;
+    }
+  }
+}

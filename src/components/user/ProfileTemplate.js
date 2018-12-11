@@ -15,50 +15,65 @@ function ProfileTemplate( { user } ){
   }, Object.create(null));
 
   return(
-    <section>
-      <div>
-        <h2>{user.username} page </h2>
+    <div>
+      <div className="title-section">
+        <h2>{user.username}'s page </h2>
       </div>
       <div>
-        <h3>My projects</h3>
-        <div>
-          { user.projectsCreated && user.projectsCreated.map(
+        <div className="category-title">
+          <h3>My projects</h3>
+        </div>
+        <div className="content-box">
+          <p className="count-note">{user.projectsCreated.length-1} projects created</p>
+          { user.projectsCreated ? user.projectsCreated.map(
             project => {
-              <div key={getRandomInt()}>
+              <div key={getRandomInt()} className="project-title">
                 <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
               </div>;
             }
-          )}
-        </div>
-      </div>
-      <div>
-        <h3>Supporting Projects</h3>
-        <div>
-          { ( user.supportedByMe.length > 0) ?
-            uniqueProjectsSupportedByMe.map(
-              project =>
-                <div key={getRandomInt()}>
-                  <p>Supporting {user.supportedByMe.length}projects</p>
-                  <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
-                </div>
-            )
+          )
             :
-            <p>Supporting {user.supportedByMe.length} projects</p>
+            <p className="count-note">{user.projectsCreated.length-1} projects created</p>
           }
         </div>
       </div>
       <div>
-        <h3>Projects commented by me</h3>
-        <div>
-          { user.commentedByMe && uniqueProjectsCommentedByMe.map(
-            project =>
-              <div key={getRandomInt()}>
-                <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
-              </div>
-          )}
+        <div className="category-title">
+          <h3>Supporting Projects</h3>
+        </div>
+        <div className="content-box">
+          <p className="count-note">Supporting {user.supportedByMe.length-1} projects</p>
+          { ( user.supportedByMe.length > 0) ?
+            uniqueProjectsSupportedByMe.map(
+              project =>
+                <div key={getRandomInt()} className="project-title">
+                  <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
+                </div>
+            )
+            :
+            <p className="count-note">Supporting {user.supportedByMe.length-1} projects</p>
+          }
         </div>
       </div>
-    </section>
+      <div>
+        <div className="category-title">
+          <h3>Projects commented by me</h3>
+        </div>
+        <div className="content-box">
+          <p className="count-note">Commented on {user.commentedByMe.length-1} projects</p>
+          { ( user.commentedByMe.length > 0 ) ?
+            uniqueProjectsCommentedByMe.map(
+              project =>
+                <div key={getRandomInt()} className="project-title">
+                  <Link to={`/projects/${project._id}`}><p>{ titling(project.title) }</p></Link>
+                </div>
+            )
+            :
+            <p className="count-note">Commented on {user.commentedByMe.length-1} projects</p>
+          }
+        </div>
+      </div>
+    </div>
   );
 }
 

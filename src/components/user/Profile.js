@@ -23,7 +23,7 @@ class Profile extends React.Component {
     const user = this.state.user;
     console.log('user is: ', user);
     return (
-      <section>
+      <section className="profile-section">
         { user
           ?
           <ProfileTemplate

@@ -93,7 +93,8 @@ body {
 }
 
 @import 'partials/header';
-@import 'partials/home';
-@import 'partials/index';
+@import 'pages/home';
+@import 'pages/index';
 @import 'partials/form';
-@import 'partials/show';
+@import 'pages/show';
+@import 'pages/profile';
