@@ -13,9 +13,13 @@
 //   from: 'slave',
 //   to: 'master',
 //   goal: 10,
-//   story: 'this is my test story'
+//   story: 'this is my test story',
+//   comments: [{_id: '2345'}],
+//   supports: [{_id: '3456'}],
+//   totalSupport: 0,
+//   remainder: 5
 // };
-//
+
 // const match = {
 //   params: {
 //     id: 1234
