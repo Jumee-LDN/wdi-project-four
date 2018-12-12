@@ -15,3 +15,5 @@ app.use(morgan('dev'));
 app.use('/api', router);
 
 app.listen(port, () => console.log(`Express is listening on port ${port}`));
+
+module.exports = app;
