@@ -2,7 +2,7 @@ import React from 'react';
 import FormButton from './formElements/FormButton';
 import FormInput from './formElements/FormInput';
 
-function SupportsTemplate( { project, handleChange, createSupport } ){
+function SupportsTemplate( { project, handleChange, createSupport, isAuthenticated } ){
   return(
     <div>
       <div className="title-section">
@@ -19,6 +19,12 @@ function SupportsTemplate( { project, handleChange, createSupport } ){
         }
       </div>
       <div>
+        {!isAuthenticated() &&
+          <div className="notice-message">
+            <p>Please login to support points.</p>
+          </div>
+        }
+
         <form onSubmit={createSupport}>
           <FormInput name="amount" type="number" handleChange={handleChange} min="1" max="100" placeholder="30 points"/>
           <FormButton text="Support"/>

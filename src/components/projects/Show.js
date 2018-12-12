@@ -88,6 +88,7 @@ export default class ProjectShow extends React.Component {
                 project={project}
                 handleChange = {this.handleChange}
                 createSupport = {this.createSupport}
+                isAuthenticated = {this.isAuthenticated}
               />
             </div>
             <div className="comments-container">

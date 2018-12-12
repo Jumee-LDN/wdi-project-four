@@ -20,6 +20,11 @@ function CommentsTemplate( props ){
             </div>
           )}
         </div>
+        {!props.isAuthenticated() &&
+          <div className="notice-message">
+            <p>Please login to comment.</p>
+          </div>
+        }
         <form onSubmit={props.createComment}>
           <div className="field" id="form-input-container">
             <textarea className="textarea is-link" name="text" placeholder='Hi there!' onChange={props.handleChange} value={props.text}></textarea>
