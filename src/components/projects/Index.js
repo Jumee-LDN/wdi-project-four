@@ -41,6 +41,7 @@ class ProjectIndex extends React.Component {
             )}
           </div>
         </div>
+        <div className="divider"></div>
         <div className="project-list-section">
           <div className="index-category-title">
             <h3>Future role</h3>

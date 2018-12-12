@@ -1,12 +1,21 @@
 #home {
   text-align: center;
-  padding: 3rem 3rem;
+  padding: 3rem 0 6rem 0;
   margin: 0 1rem;
   font-family: $main-font;
   font-weight: 300;
+  border-bottom: 1px dotted #00000045;
 
   .home-message {
-    padding: 4rem;
+    padding: 3.8rem;
+    .long-message-container {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      padding-top: 4rem;
+      .join-message {
+        padding-top: 2rem;
+      }
+    }
 
   }
   button {
@@ -14,10 +23,11 @@
     #italic {
       font-family: $main-font;
       font-style: italic;
+      color: palevioletred;
     }
   }
   button:hover{
-    border-bottom: 1px solid #00000045;
+    border-bottom: 1px solid palevioletred;
   }
   .flash-message-container {
     height: 100px;
@@ -35,20 +45,20 @@
   }
 }
 
-@media only screen and (max-width: 960px) {
-  #home{
-    padding: 3.5rem 0;
-    button {
-      margin: 1.5rem 0;
-    }
-  }
-}
-@media only screen and (max-width: 640px) {
-  .flash-message-container {
-    height: 2.2rem;
-    line-height: 2.2rem;
-    .flash-message {
-      font-size: 14px;
-    }
-  }
-}
+// @media only screen and (max-width: 960px) {
+//   #home{
+//     padding: 3.5rem 0;
+//     button {
+//       margin: 1.5rem 0;
+//     }
+//   }
+// }
+// @media only screen and (max-width: 640px) {
+//   .flash-message-container {
+//     height: 2.2rem;
+//     line-height: 2.2rem;
+//     .flash-message {
+//       font-size: 14px;
+//     }
+//   }
+// }

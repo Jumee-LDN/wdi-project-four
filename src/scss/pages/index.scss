@@ -20,11 +20,14 @@
       font-weight: 300;
     }
   }
-
+  .divider {
+    border-bottom: 1px dotted $light-grey;
+    height: 3rem;
+  }
   .project-list-section {
 
     margin-bottom: 2rem;
-
+    padding-top: 1rem;
     .project-list-container {
       border-left: 1px dotted grey;
       border-right: 1px dotted grey;

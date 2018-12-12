@@ -32,6 +32,11 @@ export default class ProjectNew extends React.Component {
           handleChange = {this.handleChange}
           handleSubmit = {this.handleSubmit}
         />
+        {!isAuthenticated() &&
+          <div className="notice-message">
+            <p>Please login to proceed.</p>
+          </div>
+        }
       </section>
     );
   }
