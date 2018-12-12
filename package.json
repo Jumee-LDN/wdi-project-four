@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "webpack -p",
+    "start": "yarn build && node index",
     "start:server": "nodemon",
     "start:client": "webpack-dev-server",
     "seed": "node db/seeds",
