@@ -35,13 +35,13 @@ The last project.
 ## Goal
 
 ## Visuals
-![image width="150"](./src/assets/readmes/p4-sketch1.gif)
-![image width="150"](./src/assets/readmes/p4-sketch2.gif)
 
 ##### All features
 
 ## Project Log
 #### Approach
+![image width="100"](./src/assets/readmes/p4-sketch1.gif)
+![image width="100"](./src/assets/readmes/p4-sketch2.gif)
 #### Challenges
 ```javascript
 projectSchema.virtual('totalSupport')
