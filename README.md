@@ -31,20 +31,36 @@ Build a MERN (MongoDB, Express, React, Node.js) stack web application.
 **Timeframe :** 1 week (December 2018)
 
 ## Concept
-
-
+The last project.
 ## Goal
 
 ## Visuals
+![image width="150"](./src/assets/readmes/p4-sketch1.gif)
+![image width="150"](./src/assets/readmes/p4-sketch2.gif)
 
 ##### All features
 
 ## Project Log
 #### Approach
 #### Challenges
+```javascript
+projectSchema.virtual('totalSupport')
+  .get(function() {
+    return this.supports.reduce((sum, support) => {
+      return sum + support.amount;
+    }, 0);
+  });
+
+projectSchema.virtual('remainder')
+  .get(function() {
+    return this.goal - this.totalSupport;
+  });
+```
 #### Lessons learned
 
 ## Bugs / Moving Forward
+- Better UX / Redirect
+-
 
 ## Technologies Used
 | Category | List |
