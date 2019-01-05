@@ -40,9 +40,16 @@ The last project.
 
 ## Project Log
 #### Approach
-![image width="100"](./src/assets/readmes/p4-sketch1.gif)
-![image width="100"](./src/assets/readmes/p4-sketch2.gif)
+Initial notes
+![image width="150"](./src/assets/readmes/p4-sketch1.gif)
+Plans
+![image width="150"](./src/assets/readmes/p4-sketch2.gif)
+
 #### Challenges
+![image width="150"](./src/assets/readmes/Jan-04-2019 15-51-37.gif)
+I found Trello project management was more effective on a team
+development.
+
 ```javascript
 projectSchema.virtual('totalSupport')
   .get(function() {
