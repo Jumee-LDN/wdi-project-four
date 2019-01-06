@@ -41,9 +41,15 @@ After the third project using Angular, the course swiftly moved on to learn a ne
 The project is on its first stage and will be continued as my side project.
 
 ## Visuals
+Home and Index
+
 ![image width="150"](./src/assets/readmes/start.gif)
 
+Project Show
+
 ![image width="150"](./src/assets/readmes/login.gif)
+
+Profile, Comment and Support
 
 ![image width="150"](./src/assets/readmes/profile.gif)
 
