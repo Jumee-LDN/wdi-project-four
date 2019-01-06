@@ -199,6 +199,3 @@ Please see below for the details of my training and links to more projects.
 Email : jumeelee.london@gmail.com
 
 [Portfolio](https://jumeelee.co.uk/) | [LinkedIn](https://www.linkedin.com/in/jumeelee/) | [GitHub](https://github.com/Jumee-LDN)
-
-#### India Derrick
-[GitHub](https://github.com/indiaderrick)
