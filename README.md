@@ -41,15 +41,15 @@ After the third project using Angular, the course swiftly moved on to learn a ne
 The project is on its first stage and will be continued as my side project.
 
 ## Visuals
-Home and Index
+**Home and Index**
 
 ![image width="150"](./src/assets/readmes/start.gif)
 
-Project Show
+**Project Show**
 
 ![image width="150"](./src/assets/readmes/login.gif)
 
-Profile, Comment and Support
+**Profile, Comment and Support**
 
 ![image width="150"](./src/assets/readmes/profile.gif)
 
@@ -76,9 +76,12 @@ Profile, Comment and Support
 | **2 days** | Client side work. Style / Scss. |
 | **Half day** | Extra features, Bug fixing, Testing, Git, Deployment |
 
-Initial notes
+**Initial notes**
+
 ![image width="150"](./src/assets/readmes/p4-sketch1.gif)
-Plan notes
+
+**Plan notes**
+
 ![image width="150"](./src/assets/readmes/p4-sketch2.gif)
 
 #### Challenges
