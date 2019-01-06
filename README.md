@@ -53,6 +53,10 @@ The project is on its first stage and will be continued as my side project.
 
 ![image width="150"](./src/assets/readmes/profile.gif)
 
+**Goal achieved**
+
+![image width="150"](./src/assets/readmes/support.gif)
+
 ##### All features
 > User can access to
 - Home
