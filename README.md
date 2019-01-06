@@ -31,25 +31,59 @@ Build a MERN (MongoDB, Express, React, Node.js) stack web application.
 **Timeframe :** 1 week (December 2018)
 
 ## Concept
-The last project.
+Users can create their own project to share their career change idea or simply just support someone's story by giving away points. Every projects has a goal points to achieve 0.
+This application could develop into a crowdfunding project.
+
+
 ## Goal
+Learning a new framework in 2 weeks is quite challenging.
+After the third project using Angular, the course swiftly moved on to learn a new framework , React for another 2 weeks. I found this switch abstruse and I wanted to take the opportunity of the project week to understand the comprehensive concept and usage of React.
+The project is on its first stage and will be continued as my side project.
 
 ## Visuals
+![image width="150"](./src/assets/readmes/start.gif)
+
+![image width="150"](./src/assets/readmes/login.gif)
+
+![image width="150"](./src/assets/readmes/profile.gif)
 
 ##### All features
+> User can access to
+- Home
+- View all projects.
+- Register
+
+> Registered user can
+- Log in and out.
+- Create, edit and delete a project.
+- Support points on the projects.
+- Make comment on the projects and delete their own comments.
+- Access to their profile page.
+- The profile page shows the projects the user created, commented and gave support points.
 
 ## Project Log
 #### Approach
+| Time | Action |
+| ---- |:------:|
+| **1.5 day** | Project concept, code planning, wireframe |
+| **3 days**| Server side work. Initial front end set up. |
+| **2 days** | Client side work. Style / Scss. |
+| **Half day** | Extra features, Bug fixing, Testing, Git, Deployment |
+
 Initial notes
 ![image width="150"](./src/assets/readmes/p4-sketch1.gif)
-Plans
+Plan notes
 ![image width="150"](./src/assets/readmes/p4-sketch2.gif)
 
 #### Challenges
-![image width="150"](./src/assets/readmes/Jan-04-2019 15-51-37.gif)
 I found Trello project management was more effective on a team
-development.
+development. I spent longer time on planning and replanning then the last project and I found more easy to manage time and check status when I had a team member to work with. As you can see the Trello board is cleaner than the last.
 
+![image width="150"](./src/assets/readmes/trello.gif)
+
+There are more JavaScript fun in React.
+
+Project schema virtuals.
 ```javascript
 projectSchema.virtual('totalSupport')
   .get(function() {
@@ -64,10 +98,13 @@ projectSchema.virtual('remainder')
   });
 ```
 #### Lessons learned
+Group development vs individual development. Individual environment provided high concentration and focus but group work was also great for inspiration and to do more things and I found myself better at managing time because of responsibility.
 
 ## Bugs / Moving Forward
-- Better UX / Redirect
--
+- Better UX / Redirect create project page if logged in.
+- Limit and make support credit purchasable to support projects.
+- Replace support points to currency.
+- Add flash message on registration and log in errors.
 
 ## Technologies Used
 | Category | List |
@@ -75,8 +112,6 @@ projectSchema.virtual('remainder')
 | Languages                            | Javascript (ECMAScript6), CSS3, Sass, HTML5 |
 | Front-end Web Application Framework / Library  | React |
 | Server Environment                   | Node.js with Express.js |
-| CSS Framework                        | Bulma |
-| Third-party APIs                     | OpenStreetMap with Leaflet |
 | Project Collaboration Tool           | Trello, Slack |
 | REST client                          | Insomnia |
 | Typefaces                            | Google Fonts |
