@@ -31,13 +31,13 @@ Build a MERN (MongoDB, Express, React, Node.js) stack web application.
 **Timeframe :** 1 week (December 2018)
 
 ## Concept
-Users can create their own project to share their career change idea or simply just support someone's story by giving away points. Every projects has a goal points to achieve 0.
+Users can create their own project to share their career change idea or simply just support someone else’s story by giving away points. Every project has a goal points to achieve 0.
 This application could develop into a crowdfunding project.
 
 
 ## Goal
 Learning a new framework in 2 weeks is quite challenging.
-After the third project using Angular, the course swiftly moved on to learn a new framework , React for another 2 weeks. I found this switch abstruse and I wanted to take the opportunity of the project week to understand the comprehensive concept and usage of React.
+After the third project using Angular, the course swiftly moved on to learn a new framework, React for another 2 weeks. I found this switch abstruse and I wanted to take the opportunity of the project week to understand the comprehensive concept and usage of React.
 The project is on its first stage and will be continued as my side project.
 
 ## Visuals
@@ -89,7 +89,7 @@ The project is on its first stage and will be continued as my side project.
 ![image width="150"](./src/assets/readmes/p4-sketch2.gif)
 
 #### Challenges
-I found Trello project management was more effective on a team
+I found Trello project management was more effective on team
 development. I spent longer time on planning and replanning then the last project and I found more easy to manage time and check status when I had a team member to work with. As you can see the Trello board is cleaner than the last.
 
 ![image width="150"](./src/assets/readmes/trello.gif)
@@ -111,7 +111,7 @@ projectSchema.virtual('remainder')
   });
 ```
 #### Lessons learned
-Group development vs individual development. Individual environment provided high concentration and focus but group work was also great for inspiration and to do more things and I found myself better at managing time because of responsibility.
+Group development vs individual development. The individual environment provided high concentration and focus but group work was also great for inspiration and to do more things and I found myself better at managing time because of responsibility.
 
 ## Bugs / Moving Forward
 - Better UX / Redirect create project page if logged in.
@@ -122,7 +122,7 @@ Group development vs individual development. Individual environment provided hig
 ## Technologies Used
 | Category | List |
 | ---- | --- |
-| Languages                            | Javascript (ECMAScript6), CSS3, Sass, HTML5 |
+| Languages                            | JavaScript (ECMAScript6), CSS3, Sass, HTML5 |
 | Front-end Web Application Framework / Library  | React |
 | Server Environment                   | Node.js with Express.js |
 | Project Collaboration Tool           | Trello, Slack |
