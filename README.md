@@ -1,7 +1,7 @@
 # Nomad
 
 ## GA Project 4
-This was the fourth project during my time on the Web Development Immersive course (12 weeks of full-time) at General Assembly. The project took place in the week 12. [>>To the Site<<](https://nomad-ga.herokuapp.com/)
+This was the fourth project during my time on the Web Development Immersive course (12 weeks of full-time) at General Assembly. The project took place in the week 12.
 
 **Note**
 The landing page may take longer than the average page load time.
